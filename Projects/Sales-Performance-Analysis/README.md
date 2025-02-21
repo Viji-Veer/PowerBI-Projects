@@ -70,13 +70,17 @@ High-profit but low-sales regions were identified for potential investment.
 
 🚀 How to Use This Project
 
+
 Clone the repository  
    ```bash
    git clone https://github.com/yourusername/PowerBI-Projects.git
+
                   or
+
 Download the Financial Sample.xlsx dataset from the Data folder.
 Open the Power BI report (.pbix file) from the Reports folder.
 Explore the visualizations and insights.
+
 
 🤝 Contributing
 If you have suggestions or improvements, feel free to fork this repository and submit a pull request.
