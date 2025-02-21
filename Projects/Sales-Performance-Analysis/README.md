@@ -72,8 +72,7 @@ High-profit but low-sales regions were identified for potential investment.
 
 
 Clone the repository  
-   ```bash
-   git clone https://github.com/yourusername/PowerBI-Projects.git
+     git clone https://github.com/yourusername/PowerBI-Projects.git
 
                   or
 
