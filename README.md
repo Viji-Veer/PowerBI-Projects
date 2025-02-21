@@ -25,6 +25,5 @@ This repository contains multiple Power BI projects focusing on **data visualiza
 
 ## 🤝 Connect With Me  
 📧 Email: imvijee@gmail.com  
-💼 LinkedIn: www.linkedin.com/in/
-vijayalakshmi-veeraiyan-viji-6761421a1
+💼 LinkedIn: https://www.linkedin.com/in/vijayalakshmi-veeraiyan-viji-6761421a1/
 
