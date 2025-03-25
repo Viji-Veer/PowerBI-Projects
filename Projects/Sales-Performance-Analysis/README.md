@@ -79,7 +79,7 @@ Open the Power BI report (.pbix file) from the Reports folder.
 Explore the visualizations and insights.
 
 
-🤝 Contributing
+🤝 Contributing-
 If you have suggestions or improvements, feel free to fork this repository and submit a pull request.
 
 📌 Author
