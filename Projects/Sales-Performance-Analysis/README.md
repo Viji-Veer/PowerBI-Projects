@@ -1,88 +1,167 @@
+# Sales Performance and Trend Analysis
 
-# 📊 Sales Performance and Trend Analysis
+A multi-page interactive Power BI dashboard analyzing historical 
+sales data to uncover revenue trends, profitability patterns, 
+and forecast future growth.
 
-## 📌 Project Overview
-This project analyzes historical sales data from the **Microsoft Financial Sample dataset** to identify trends, evaluate sales performance, and predict future revenue growth. It uses **Power BI** to create interactive dashboards and visualizations.
+## Overview
+This project analyzes the Microsoft Financial Sample dataset 
+to evaluate sales performance across products, regions, and 
+customer segments across 2013-2014. The dashboard enables 
+business stakeholders to make data-driven decisions through 
+interactive visualizations and forward-looking forecasts 
+across three dedicated report pages.
 
-## 🔍 Objectives
-- Analyze key sales metrics, including **Total Sales, Profit, and Revenue Trends**.
-- Identify **top-performing products, regions, and customer segments**.
-- Forecast future sales using **historical data and growth assumptions**.
-- Provide actionable insights for **improving business decision-making**.
+## Tools & Technologies
+- **Power BI Desktop** — dashboard development and visualization
+- **DAX** — custom measures, KPIs, and time intelligence
+- **Power Query** — data transformation and cleaning
+- **Excel** — source data (Microsoft Financial Sample)
 
-## 📈 Key Features  
-✅ **Sales & Profit Analysis** – KPI Cards  
-✅ **Sales Trends Over Time** – Line Chart  
-✅ **Profit Margin by Product** – Pie Chart  
-✅ **Sales Forecasting** – Using a **10% growth assumption**  
-✅ **Interactive Filters** – Segment & Country slicers  
+## Data Model
+- Built a **star schema** with a dedicated Date Table 
+  created using `CALENDARAUTO()` and marked as Date Table
+- Established one-to-many relationships between 
+  Date Table and fact table
+- Organised DAX measures into display folders 
+  (Sales and Profit) for clean model structure
 
-## 📂 Dataset Information
+## DAX Measures Created
 
-- **File**: `Financial_Sample.xlsx`  
-- **Source:** Microsoft Financial Sample (Excel)
-- **Columns Used:**
-  - Date
-  - Product Category
-  - Sales Amount
-  - Profit
-  - Discount
-  - COGS (Cost of Goods Sold)
-  - Country/Region
+### Sales Folder
+```dax
+Total Sales = SUM(financials[Sales])
 
-## 🛠️ Tools & Technologies
+Total Gross Sales = SUM(financials[Gross Sales])
 
-- **Power BI**: Data visualization and dashboard creation
-- **DAX (Data Analysis Expressions)**: Custom calculations and forecasting
-- **Excel**: Data preprocessing and cleaning
+Total Units Sold = SUM(financials[Units Sold])
 
-## 📈 Key Analysis & Insights
+Sales Forecast = 
+VAR LastYearSales = 
+    CALCULATE(
+        [Total Sales], 
+        SAMEPERIODLASTYEAR('Date Table'[Date])
+    )
+RETURN 
+    IF(
+        ISBLANK(LastYearSales),
+        BLANK(),
+        LastYearSales * 1.1
+    )
+```
 
-### **Sales Trends Over Time**
-- Monthly and yearly sales trends were analyzed.
-- Seasonal patterns in revenue were identified.
+### Profit Folder
+```dax
+Total Profit = SUM(financials[Profit])
 
-### **Top Products & Regions**
-- The most profitable product categories were identified.
-- Sales distribution across different regions was compared.
+Profit Margin % = DIVIDE([Total Profit], [Total Sales]) * 100
+```
 
-### **Sales Forecasting**
-- A **10% annual sales growth** assumption was used to project future revenue.
-- DAX formula used:
-  ```DAX
-  Sales Forecast = 
-  VAR LastYearSales = CALCULATE( [Total Sales], SAMEPERIODLASTYEAR( 'Financial Sample'[Date] ) ) 
-  RETURN LastYearSales * 1.1  -- Assuming a 10% growth rate
+## Dashboard Pages
 
-### ** Profitability Analysis**
-Profit margins for different products and regions were calculated.
-High-profit but low-sales regions were identified for potential investment.
+### Page 1 — Executive Summary
+High-level overview of overall sales performance:
+- KPI cards — Total Sales ($118.73M) and 
+  Total Profit ($16.89M)
+- Bar chart — Total Sales by Country
+- Pie chart — Profit Margin % by Product
+- Line chart — Actual vs Forecasted Sales by Date
+- Interactive dropdown slicers — Country and Segment
 
-### ** Power BI Dashboard Screenshots
+### Page 2 — Product & Region Analysis
+Detailed breakdown of product and regional performance:
+- Bar chart — Gross Sales by Product
+- Bar chart — Profit by Country
+- Matrix — Sales by Product and Country with totals
+- KPI cards — Total Units Sold (1,125,806) 
+  and Profit Margin % (14.23%)
+- Interactive dropdown slicers — Country and Segment
 
+### Page 3 — Sales Forecast Analysis
+Forward-looking revenue projections:
+- Line chart — Actual vs Forecasted Sales by Month
+- Bar chart — Actual vs Forecasted Sales by Country
+- KPI cards — Actual Total Sales ($118.73M) 
+  and Forecasted Sales ($29.06M)
+- Methodology note explaining forecast assumptions
 
+## Key Insights
+- **United States of America** generates the highest 
+  total sales across all countries
+- **Paseo** is the top-selling product by gross sales 
+  ($33M total)
+- **France** leads in total profit by country
+- **Amarilla** has the highest profit margin at 18.7%
+- Sales peak observed in **October 2014** — highest 
+  monthly revenue in the dataset
+- Forecast projects **10% YoY growth** for Sep-Nov 2014 
+  based on prior year actuals using SAMEPERIODLASTYEAR 
+  time intelligence
 
+## Sales Forecasting Methodology
+```dax
+Sales Forecast = 
+VAR LastYearSales = 
+    CALCULATE(
+        [Total Sales], 
+        SAMEPERIODLASTYEAR('Date Table'[Date])
+    )
+RETURN 
+    IF(
+        ISBLANK(LastYearSales),
+        BLANK(),
+        LastYearSales * 1.1
+    )
+```
+A 10% annual growth rate was applied based on the 
+average year-over-year growth observed in the dataset. 
+The forecast only displays for periods where a full 
+year of baseline data exists (Sep–Nov 2014), ensuring 
+projections are grounded in real data rather than 
+assumptions.
 
+## Dashboard Screenshots
 
+### Page 1 — Executive Summary
+![Page 1](Images/Page1_Executive_Summary.png)
 
+### Page 2 — Product & Region Analysis
+![Page 2](Images/Page2_Product_Region.png)
 
+### Page 3 — Sales Forecast Analysis
+![Page 3](Images/Page3_Sales_Forecast.png)
 
+## Dataset
+**Source:** Microsoft Financial Sample (publicly available)
+**Period:** September 2013 — November 2014
+**Key columns:** Date, Product, Segment, Country, 
+Sales, Gross Sales, COGS, Profit, Discount Band, 
+Units Sold
 
-🚀 How to Use This Project
+## How to Use
+1. Clone this repository
+2. Download `Financial_Sample.xlsx` from the `/Data` folder
+3. Open the `.pbix` file from the `/Reports` folder 
+   in Power BI Desktop
+4. Explore the interactive dashboard across all 3 pages
+5. Use Country and Segment slicers to filter data
 
+## Repository Structure
+PowerBI-Projects/
+├── Projects/
+│   └── Sales-Performance-Analysis/
+│       ├── Data/
+│       │   └── Financial_Sample.xlsx
+│       ├── Reports/
+│       │   └── Sales_Performance_Analysis.pbix
+│       ├── Images/
+│       │   ├── Page1_Executive_Summary.png
+│       │   ├── Page2_Product_Region.png
+│       │   └── Page3_Sales_Forecast.png
+│       └── README.md
 
-Clone the repository  
-     git clone https://github.com/Viji-Veer/PowerBI-Projects.git
-
-Download the Financial Sample.xlsx dataset from the Data folder.
-Open the Power BI report (.pbix file) from the Reports folder.
-Explore the visualizations and insights.
-
-
-🤝 Contributing-
-If you have suggestions or improvements, feel free to fork this repository and submit a pull request.
-
-📌 Author
-[Vijayalakshmi Veeraiyan]
-LinkedIn Profile  https://www.linkedin.com/in/vijayalakshmi-veeraiyan-viji-6761421a1/
-
+## Author
+**Vijayalakshmi Veeraiyan**
+- LinkedIn: [linkedin.com/in/vijayalakshmi-veeraiyan]
+- GitHub: [github.com/Viji-Veer]
+- Email: imvijee@gmail.com
