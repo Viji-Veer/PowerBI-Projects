@@ -92,7 +92,7 @@ Forward-looking revenue projections:
   ($33M total)
 - **France** leads in total profit by country
 - **Amarilla** has the highest profit margin at 18.7%
-- Sales peak observed in **October 2014** — highest 
+- Sales peak observed in **October 2014** - highest 
   monthly revenue in the dataset
 - Forecast projects **10% YoY growth** for Sep-Nov 2014 
   based on prior year actuals using SAMEPERIODLASTYEAR 
