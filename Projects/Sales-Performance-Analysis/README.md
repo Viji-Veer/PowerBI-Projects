@@ -162,6 +162,6 @@ PowerBI-Projects/
 
 ## Author
 **Vijayalakshmi Veeraiyan**
-- LinkedIn: [linkedin.com/in/vijayalakshmi-veeraiyan]
-- GitHub: [github.com/Viji-Veer]
+- LinkedIn: [https://www.linkedin.com/in/vijayalakshmi-veeraiyan-viji-6761421a1]
+- GitHub: [https://www.github.com/Viji-Veer]
 - Email: imvijee@gmail.com
