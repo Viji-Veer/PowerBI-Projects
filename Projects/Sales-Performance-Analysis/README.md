@@ -146,19 +146,7 @@ Units Sold
 4. Explore the interactive dashboard across all 3 pages
 5. Use Country and Segment slicers to filter data
 
-## Repository Structure
-PowerBI-Projects/
-├── Projects/
-│   └── Sales-Performance-Analysis/
-│       ├── Data/
-│       │   └── Financial_Sample.xlsx
-│       ├── Reports/
-│       │   └── Sales_Performance_Analysis.pbix
-│       ├── Images/
-│       │   ├── Page1_Executive_Summary.png
-│       │   ├── Page2_Product_Region.png
-│       │   └── Page3_Sales_Forecast.png
-│       └── README.md
+
 
 ## Author
 **Vijayalakshmi Veeraiyan**
