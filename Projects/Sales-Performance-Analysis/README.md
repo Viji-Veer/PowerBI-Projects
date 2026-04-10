@@ -123,13 +123,13 @@ assumptions.
 ## Dashboard Screenshots
 
 ### Page 1 — Executive Summary
-![Page 1](Images/Page1_Executive_Summary.png)
+![Page 1](Images/Page1_Executive_Summary.PNG)
 
 ### Page 2 — Product & Region Analysis
-![Page 2](Images/Page2_Product_Region.png)
+![Page 2](Images/Page2_Product_Region.PNG)
 
 ### Page 3 — Sales Forecast Analysis
-![Page 3](Images/Page3_Sales_Forecast.png)
+![Page 3](Images/Page3_Sales_Forecast.PNG)
 
 ## Dataset
 **Source:** Microsoft Financial Sample (publicly available)
