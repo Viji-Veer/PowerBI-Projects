@@ -9,8 +9,8 @@ This repository contains Power BI projects focusing on **data visualization, bus
    - Technologies: Power BI, DAX, SQL, Excel  
    - [View Project Details](./Projects/Sales-Performance-Analysis/README.md)  
 
-2. **[Future Project Fraud-detection-And-Anamoly-Analysis](./Projects/Fraud-detection-And-Anamoly-Analysis/README.md)**  
-   - The report analyzes transaction behavior based on factors such as amount, time, frequency, and customer activity to highlight potential fraud risks.  
+2. **[Future Project: Fraud detection and Anamoly analysis](./Projects/Fraud-detection-And-Anamoly-Analysis/README.md)**  
+   - Fraud Detection & Anomaly Analysis is a Power BI project focused on identifying suspicious transactions and unusual patterns in financial data.  
    - Technologies: Power BI, DAX 
 
 
