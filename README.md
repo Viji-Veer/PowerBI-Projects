@@ -1,7 +1,7 @@
 # 📊 Power BI Projects  
 
 ## 🚀 Overview  
-This repository contains multiple Power BI projects focusing on **data visualization, business intelligence, and analytics**. Each project showcases different aspects of Power BI, including **data modeling, DAX calculations, and interactive dashboards**.  
+This repository contains Power BI projects focusing on **data visualization, business intelligence and analytics**. The project showcases different aspects of Power BI, including **data modeling, DAX calculations, and interactive dashboards**.  
 
 ## 📂 Projects Included  
 1. **[Sales Performance Analysis](./Projects/Sales-Performance-Analysis/README.md)**  
@@ -9,13 +9,10 @@ This repository contains multiple Power BI projects focusing on **data visualiza
    - Technologies: Power BI, DAX, SQL, Excel  
    - [View Project Details](./Projects/Sales-Performance-Analysis/README.md)  
 
-2. **[Future Project 1](./Projects/Future-Project-1/README.md)**  
-   - Description of upcoming project...  
-   - Technologies: Power BI, Machine Learning...  
+2. **[Future Project 1](./Projects/Fraud-detection-And-Anamoly-Analysis/README.md)**  
+   - The report analyzes transaction behavior based on factors such as amount, time, frequency, and customer activity to highlight potential fraud risks.  
+   - Technologies: Power BI, DAX 
 
-3. **[Future Project 2](./Projects/Future-Project-2/README.md)**  
-   - Description of upcoming project...  
-   - Technologies: Power BI, Python...  
 
 ## 🔧 Technologies Used  
 - **Power BI** for visualization  
